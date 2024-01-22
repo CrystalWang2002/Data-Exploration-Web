@@ -1,5 +1,5 @@
 numpy
 pandas
 streamlit
-folium
+folium==0.12.1
 geopy
