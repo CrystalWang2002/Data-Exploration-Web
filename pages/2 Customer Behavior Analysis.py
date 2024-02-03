@@ -274,36 +274,9 @@ with st.expander("7. Location"):
                 #### Sales Activity Location
                 """)
 
-    df=pd.read_csv("./data/shopping_trends.csv")
-    unique_locations = df['Location'].unique()
-    location_coords = {}
-    geolocator = Nominatim(user_agent="geoapiExercises", timeout=10)
-    geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
-
-    for location in unique_locations:
-        try:
-            geo_location = geocode(location)
-            if geo_location:
-                location_coords[location] = (geo_location.latitude, geo_location.longitude)
-        except Exception as e:
-            st.error(f"Error encoding location {location}: {e}")
-
-
-# Make sure all the coordinates are valid
-    df['coords'] = df['Location'].apply(lambda x: location_coords.get(x))
-
-# Keep only the rows with valid coordinates
-    valid_data = df.dropna(subset=['coords'])
-
-# List of latitude, longitude and purchase amounts
-    heat_data = [[row['coords'][0], row['coords'][1], row['Purchase Amount (USD)']] for index, row in valid_data.iterrows()]
-
-# Creating a base map
-    map = folium.Map(location=[39.8283, -98.5795], zoom_start=4)  # 美国地理中心的坐标
-
-# Adding a Heat Layer
-    HeatMap(heat_data).add_to(map)
-    folium_static(map)
+    st.markdown("""#### HeatMap of Purchase Amount Distribution""")
+    st.image('./pictures/31.png', use_column_width=True)
+    
     st.markdown("""
         🔍The heat map shows concentrated sales activity in the Northeastern United States, particularly around the New York area, indicated by the red and orange colors that signify higher sales volumes.The West Coast, particularly in California, and the Southern states show moderate to high levels of activity, with the intensity decreasing as it moves inland.There are isolated areas of activity, potentially major cities, that stand out in Alaska and Hawaii, indicating significant market engagement in these locales.
 
