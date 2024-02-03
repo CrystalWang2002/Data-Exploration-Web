@@ -2,14 +2,6 @@ import numpy as np
 import pandas as pd 
 import streamlit as st
 import pandas as pd
-import folium
-from folium.plugins import HeatMap
-import geopy
-from geopy.geocoders import Nominatim
-from geopy.extra.rate_limiter import RateLimiter
-from streamlit_folium import folium_static
-import time
-from geopy.extra.rate_limiter import RateLimiter
 
 # set title
 st.title("Customer Features and Behavior Analysis")
