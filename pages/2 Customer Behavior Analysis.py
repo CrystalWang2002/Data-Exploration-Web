@@ -267,7 +267,7 @@ with st.expander("7. Location"):
                 """)
 
     st.markdown("""#### HeatMap of Purchase Amount Distribution""")
-    st.image('./pictures/41.png', use_column_width=True)
+    st.image('./pictures/42.png', use_column_width=True)
     
     st.markdown("""
         🔍The heat map shows concentrated sales activity in the Northeastern United States, particularly around the New York area, indicated by the red and orange colors that signify higher sales volumes.The West Coast, particularly in California, and the Southern states show moderate to high levels of activity, with the intensity decreasing as it moves inland.There are isolated areas of activity, potentially major cities, that stand out in Alaska and Hawaii, indicating significant market engagement in these locales.
