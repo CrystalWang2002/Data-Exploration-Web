@@ -3,7 +3,7 @@ import streamlit as st
 st.title("Main Page")
 
 st.write("""
-🚀 Welcome to my personal webpage, where I share my passion for data! 🚀
+🚀 Hello, I am Wang Bi!😉 Welcome to my personal webpage, where I share my passion for data! 🚀
          
 🔍Here, you'll find my unique insights into intriguing datasets, showcasing my skills in data processing and visualization. 
 
